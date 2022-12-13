@@ -1,0 +1,16 @@
+.title{
+    background: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    h1{
+        color: white;
+        font-size: 1.75rem;
+
+        span{
+            color: orange;
+        }
+    }
+}

@@ -1,7 +1,11 @@
+import Title from "./components/Title/Title";
+import Input from "./components/Input/Input";
+
 function App() {
   return (
     <div className="App">
-      <h1>Thread dump</h1>
+      <Title />
+      <Input />
     </div>
   );
 }
