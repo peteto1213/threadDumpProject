@@ -57,9 +57,218 @@
   display: none;
 }
 
+.summary {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2.5%;
+  background: rgb(252, 252, 252);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.summary h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+.summary h2 {
+  font-size: 1.7rem;
+}
+.summary h2 span {
+  color: orange;
+}
+.summary .summary-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.summary .summary-container .card-container {
+  display: flex;
+  flex-direction: row;
+  width: 47%;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+.summary .summary-container .card-container .card {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding: 0.5rem 0.3rem;
+  background: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: none;
+  border-radius: 1.5rem;
+  align-items: center;
+}
+.summary .summary-container .card-container .card .icon {
+  font-size: 2rem;
+}
+.summary .summary-container .card-container .card .big-number {
+  font-size: 4rem;
+  padding: 0;
+  margin: 0.3rem;
+  font-weight: bold;
+}
+.summary .summary-container .card-container .card p {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 100;
+  color: gray;
+}
+.summary .summary-container .card-container .card button {
+  width: 98%;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.summary .summary-container .card-container .card button:hover {
+  opacity: 0.7;
+}
+.summary .summary-container .figure {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 1.5rem;
+  align-items: center;
+  background: white;
+}
+.summary .summary-container .figure h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 500px) {
+  .summary .summary-container .card-container {
+    width: 100%;
+  }
+  .summary .summary-container .card-container .card {
+    width: 100%;
+  }
+  .summary .summary-container .figure {
+    width: 100%;
+  }
+}
+.daemon {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2.5%;
+  background: rgb(252, 252, 252);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.daemon h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.daemon .daemon-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.daemon .daemon-container .card-container {
+  display: flex;
+  flex-direction: row;
+  width: 47%;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+.daemon .daemon-container .card-container .card {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding: 0.5rem 0.3rem;
+  background: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: none;
+  border-radius: 1.5rem;
+  align-items: center;
+}
+.daemon .daemon-container .card-container .card .icon-outer {
+  border-radius: 50%;
+  padding: 1.7rem;
+}
+.daemon .daemon-container .card-container .card .icon-outer .icon {
+  font-size: 2rem;
+}
+.daemon .daemon-container .card-container .card .big-number {
+  font-size: 4rem;
+  padding: 0;
+  margin: 0.3rem;
+  font-weight: bold;
+}
+.daemon .daemon-container .card-container .card p {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 100;
+  color: gray;
+}
+.daemon .daemon-container .card-container .card button {
+  width: 98%;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+.daemon .daemon-container .card-container .card button:hover {
+  opacity: 0.7;
+}
+.daemon .daemon-container .figure {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 1.5rem;
+  align-items: center;
+  background: white;
+}
+.daemon .daemon-container .figure h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   padding-top: -1.4rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 75%;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    font-size: 65%;
+  }
+}
+@media (max-width: 450px) {
+  body {
+    font-size: 55%;
+  }
 }/*# sourceMappingURL=style.css.map */

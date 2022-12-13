@@ -1,9 +1,29 @@
 @import '../components/Title/title';
 @import '../components/Input/input';
+@import '../components/Summary/summary';
+@import '../components/Daemon/daemon';
 
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     padding-top: -1.4rem;
+}
+
+@media (max-width: 768px) {
+    body{
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 500px) {
+    body{
+        font-size: 65%;
+    }
+}
+
+@media (max-width: 450px) {
+    body{
+        font-size: 55%;
+    }
 }
