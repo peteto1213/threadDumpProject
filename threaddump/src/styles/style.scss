@@ -3,27 +3,39 @@
 @import '../components/Summary/summary';
 @import '../components/Daemon/daemon';
 
-body{
+//font choice
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    padding-top: -1.4rem;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 7.5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    ::-webkit-scrollbar{
+        background: rgb(218, 218, 218);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgb(80, 80, 80); 
+    }
+
+    
 }
 
 @media (max-width: 768px) {
-    body{
-        font-size: 75%;
+    html{
+        font-size: 80%;
     }
 }
 
 @media (max-width: 500px) {
-    body{
-        font-size: 65%;
-    }
-}
-
-@media (max-width: 450px) {
-    body{
-        font-size: 55%;
+    html{
+        font-size: 75%;
     }
 }

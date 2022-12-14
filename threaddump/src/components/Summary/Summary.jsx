@@ -3,6 +3,12 @@ import { FaLock, FaClock, FaPause, FaRunning } from 'react-icons/fa'
 import { PieChart } from 'react-minimal-pie-chart'
 
 function Summary() {
+
+    const defaultLabelStyle = {
+        fontSize: '5px',
+        fontFamily: 'sans-serif',
+    }
+
   return (
     <div className='summary'>
         <h1>Thread Count Summary</h1>
@@ -44,7 +50,11 @@ function Summary() {
                 <h1>Thread state %</h1>
 
                 <PieChart
-                    radius={50}
+                    label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
+                    labelStyle={{
+                        ...defaultLabelStyle,
+                    }}
+                    radius={65}
                     viewBoxSize={[300, 100]}
                     center={[150, 50]}
                     animate={true}
