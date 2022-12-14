@@ -4,10 +4,21 @@ import './styles/style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import BlockedDetails from './components/Summary/BlockedDetails/BlockedDetails';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+        <Routes>
+
+          <Route  path='/' element={<App />} />
+
+          <Route path="/blockedDetails" element={<BlockedDetails />} />
+
+        </Routes>
+      </Router>
   </React.StrictMode>
 );
 

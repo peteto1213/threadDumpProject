@@ -4,6 +4,7 @@ import Summary from "./components/Summary/Summary";
 import Daemon from "./components/Daemon/Daemon";
 import IgnoredText from "./components/IgnoredText/IgnoredText";
 
+
 import { useState } from "react";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     nonDaemon: 0,
     ignoredText: [],
     synchronizers: [],
+    blockedArray: []
   })
 
   const reset = () => {
@@ -31,6 +33,7 @@ function App() {
       nonDaemon: 0,
       ignoredText: [],
       synchronizers: [],
+      blockedArray: []
     })
   }
 
@@ -41,6 +44,7 @@ function App() {
       <Summary dump={dump} />
       <Daemon dump={dump} />
       {dump.ignoredText.length > 0 && <IgnoredText dump={dump} />}
+
     </div>
   );
 }

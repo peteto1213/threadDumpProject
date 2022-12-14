@@ -1,9 +1,20 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FaLock, FaClock, FaPause, FaRunning } from 'react-icons/fa'
 import FullOption from '../PieChart/FullOption'
 import Loading from '../Loading/Loading'
 
 function Summary({ dump }) {
+
+    const navigate = useNavigate()
+
+    const viewBlockedDetails = () => {
+        navigate('/blockedDetails', {
+            state:{
+                details: dump.blockedArray
+            }
+        })
+    }
 
   return (
     <div className='summary'>
@@ -17,7 +28,7 @@ function Summary({ dump }) {
                     <FaLock className='icon' color='#D9534F' />
                     <h3 className='big-number'>{dump.blocked}</h3>
                     <p>Blocked</p>
-                    <button style={{ color: '#D9534F', background: '#F9DFDE' }} >View Details</button>
+                    <button onClick={viewBlockedDetails} style={{ color: '#D9534F', background: '#F9DFDE' }} >View Details</button>
                 </div>
 
                 <div className="card">

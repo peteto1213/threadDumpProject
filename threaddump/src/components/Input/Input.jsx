@@ -36,6 +36,7 @@ function Input(props) {
 
     const handleSubmit = () => {
 
+        // Temporary store of dump file info
         let temp = {
             total: 0,
             blocked: 0,
@@ -46,6 +47,7 @@ function Input(props) {
             nonDaemon: 0,
             ignoredText: [],
             synchronizers: [],
+            blockedArray: []
         }
 
         // split by empty line
@@ -56,17 +58,27 @@ function Input(props) {
                 console.log(`line ${i}: ${capture}`);
                 temp.total++
 
-                if(capture.includes('wait()') || capture.includes('waiting')){
+                if(capture.includes('BLOCKED')){
+                    temp.blocked++
+                    temp.blockedArray.push(capture)
+                }
+                if(capture.includes('State: WAITING')){
                     temp.waiting++
                 }
-                if(capture.includes('runnable')){
+                if(capture.includes('RUNNABLE') || capture.includes('runnable')){
                     temp.runnable++
+                }
+                if(capture.includes('TIMED_WAITING')){
+                    temp.timed++
                 }
                 if(capture.includes('daemon')){
                     temp.daemon++
                 }else{
                     temp.nonDaemon++
                 }
+            }else if(capture.includes('Locked')) {
+                splitted[i-1] += capture
+                splitted[i] = ''
             }else{
                 // capture the ignored text
                 temp.ignoredText.push(capture)
