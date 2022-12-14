@@ -43,6 +43,7 @@
                 border: none;
                 border-radius: 1.5rem;
                 align-items: center;
+                justify-content: space-around;
 
                 .icon{
                     font-size: 2rem;
@@ -95,7 +96,7 @@
 
             h1{
                 font-size: 2.2rem;
-                margin: 0;
+                margin: 0 0 1rem 0;
                 padding: 0;
             }
         }

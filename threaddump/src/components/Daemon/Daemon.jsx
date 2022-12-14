@@ -1,5 +1,6 @@
 import React from 'react'
 import { GiGooeyDaemon, GiAngelWings } from 'react-icons/gi'
+import FullOption from '../PieChart/FullOption'
 
 function Daemon() {
   return (
@@ -29,6 +30,14 @@ function Daemon() {
 
             <div className="figure">
                 <h1>Daemon vs non-Daemon</h1>
+
+                <FullOption
+                    data={[
+                        { title: 'Non-daemon', value: 2533, color: '#00A99D' },
+                        { title: 'Daemon', value: 366, color: '#F0AD4E' },
+                    ]}
+                    radius={45}
+                />
             </div>
         </div>
     </div>

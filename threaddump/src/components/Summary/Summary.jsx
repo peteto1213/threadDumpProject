@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaLock, FaClock, FaPause, FaRunning } from 'react-icons/fa'
-import { PieChart } from 'react-minimal-pie-chart'
+import FullOption from '../PieChart/FullOption'
 
 function Summary() {
 
-    const defaultLabelStyle = {
-        fontSize: '5px',
-        fontFamily: 'sans-serif',
-    }
+    
 
   return (
     <div className='summary'>
@@ -49,22 +46,14 @@ function Summary() {
             <div className="figure">
                 <h1>Thread state %</h1>
 
-                <PieChart
-                    label={({ dataEntry }) => Math.round(dataEntry.percentage) + '%'}
-                    labelStyle={{
-                        ...defaultLabelStyle,
-                    }}
-                    radius={65}
-                    viewBoxSize={[300, 100]}
-                    center={[150, 50]}
-                    animate={true}
+                <FullOption 
                     data={[
                         { title: 'Blocked', value: 1419, color: '#D9534F' },
                         { title: 'Waiting', value: 1334, color: '#F0AD4E' },
                         { title: 'Runnable', value: 89, color: '#00A99D' },
                         { title: 'Timed_waiting', value: 57, color: '#337AB7' },
                     ]}
-                    
+                    radius={50}
                 />
             </div>
         </div>

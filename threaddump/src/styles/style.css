@@ -31,7 +31,7 @@
   flex-direction: row;
   gap: 1rem;
 }
-.input .buttons button {
+.input .buttons .btn {
   font-size: 1.3rem;
   border: none;
   border-radius: 0.5rem;
@@ -41,7 +41,7 @@
   cursor: pointer;
   transition: all 0.2s linear;
 }
-.input .buttons button:hover {
+.input .buttons .btn:hover {
   opacity: 0.7;
 }
 .input .buttons .uploadLabel {
@@ -105,6 +105,7 @@
   border: none;
   border-radius: 1.5rem;
   align-items: center;
+  justify-content: space-around;
 }
 .summary .summary-container .card-container .card .icon {
   font-size: 2rem;
@@ -150,7 +151,7 @@
 }
 .summary .summary-container .figure h1 {
   font-size: 2.2rem;
-  margin: 0;
+  margin: 0 0 1rem 0;
   padding: 0;
 }
 
@@ -212,6 +213,7 @@
   border: none;
   border-radius: 1.5rem;
   align-items: center;
+  justify-content: space-around;
 }
 .daemon .daemon-container .card-container .card .icon-outer {
   border-radius: 50%;
@@ -252,7 +254,7 @@
   width: 47%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 2rem 1rem;
   border: none;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 1.5rem;
@@ -261,7 +263,7 @@
 }
 .daemon .daemon-container .figure h1 {
   font-size: 2.2rem;
-  margin: 0;
+  margin: 0 0 2rem 0;
   padding: 0;
 }
 
