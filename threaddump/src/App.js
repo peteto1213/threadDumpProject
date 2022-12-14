@@ -2,6 +2,8 @@ import Title from "./components/Title/Title";
 import Input from "./components/Input/Input";
 import Summary from "./components/Summary/Summary";
 import Daemon from "./components/Daemon/Daemon";
+import IgnoredText from "./components/IgnoredText/IgnoredText";
+
 import { useState } from "react";
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
     timed: 0,
     daemon: 0,
     nonDaemon: 0,
-    ignoredText: '',
+    ignoredText: [],
     synchronizers: [],
   })
 
@@ -27,7 +29,7 @@ function App() {
       timed: 0,
       daemon: 0,
       nonDaemon: 0,
-      ignoredText: '',
+      ignoredText: [],
       synchronizers: [],
     })
   }
@@ -38,6 +40,7 @@ function App() {
       <Input setDump={setDump} reset={reset} />
       <Summary dump={dump} />
       <Daemon dump={dump} />
+      {dump.ignoredText.length > 0 && <IgnoredText dump={dump} />}
     </div>
   );
 }

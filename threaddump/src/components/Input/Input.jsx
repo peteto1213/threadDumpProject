@@ -44,7 +44,7 @@ function Input(props) {
             timed: 0,
             daemon: 0,
             nonDaemon: 0,
-            ignoredText: '',
+            ignoredText: [],
             synchronizers: [],
         }
 
@@ -56,7 +56,7 @@ function Input(props) {
                 console.log(`line ${i}: ${capture}`);
                 temp.total++
 
-                if(capture.includes('wait()')){
+                if(capture.includes('wait()') || capture.includes('waiting')){
                     temp.waiting++
                 }
                 if(capture.includes('runnable')){
@@ -67,6 +67,9 @@ function Input(props) {
                 }else{
                     temp.nonDaemon++
                 }
+            }else{
+                // capture the ignored text
+                temp.ignoredText.push(capture)
             }
         })
 
