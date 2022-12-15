@@ -1,18 +1,25 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 
 function BlockedDetails() {
 
-    const location = useLocation()
-    const details = location.state.details
+    const [blockedThreads, setBlockedThreads] = useState([])
+
+    useEffect(() => {
+        if(JSON.parse(localStorage.getItem('dump'))){
+            console.log((JSON.parse(localStorage.getItem('dump'))));
+            const dump = (JSON.parse(localStorage.getItem('dump')))
+            setBlockedThreads(dump.blockedArray)
+        }
+    }, [])
+
 
   return (
     <div className='blockedDetails'>
-        {details.length > 0 ?
+        {blockedThreads.length > 0 ?
             <>
                 
                     <div className='card-container'>
-                        {details.map((thread) => (
+                        {blockedThreads.map((thread) => (
                             <div className='card'>
                                 {thread}
                             </div>

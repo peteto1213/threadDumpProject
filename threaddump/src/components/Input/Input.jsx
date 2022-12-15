@@ -28,6 +28,7 @@ function Input(props) {
     const reset = () => {
         setTextValue('')
         props.reset()
+        localStorage.removeItem('dump')
     }
 
     /**
@@ -76,7 +77,7 @@ function Input(props) {
                 }else{
                     temp.nonDaemon++
                 }
-            }else if(capture.includes('Locked')) {
+            }else if(capture.includes('Locked ownable')) {
                 splitted[i-1] += capture
                 splitted[i] = ''
             }else{
@@ -88,6 +89,7 @@ function Input(props) {
         console.log(temp);
 
         props.setDump(temp)
+        localStorage.setItem('dump', JSON.stringify(temp))
     }
 
     /**
